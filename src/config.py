@@ -14,12 +14,7 @@ except ModuleNotFoundError:
 BASE_DIR = Path(__file__).resolve().parent.parent
 ENV_PATH = BASE_DIR / ".env"
 
-result = load_dotenv(dotenv_path=ENV_PATH)
-
-print("Load result:", result)
-print("ENV PATH:", ENV_PATH)
-print("Exists:", ENV_PATH.exists())
-print("TMDB:", os.getenv("TMDB_API_KEY"))
+load_dotenv(ENV_PATH)
 
 TMDB_API_KEY = os.getenv("TMDB_API_KEY", "").strip()
 OMDB_API_KEY = os.getenv("OMDB_API_KEY", "").strip()
@@ -34,6 +29,7 @@ def has_omdb_api_key():
     """OMDb API key girilmiş mi kontrol eder."""
     return bool(OMDB_API_KEY)
 
-print("ENV PATH :", ENV_PATH)
-print("TMDB KEY :", TMDB_API_KEY)
-print("OMDB KEY :", OMDB_API_KEY)
+print("ENV PATH:", ENV_PATH)
+print("EXISTS:", ENV_PATH.exists())
+print("TMDB KEY:", TMDB_API_KEY)
+print("OMDB KEY:", OMDB_API_KEY)
