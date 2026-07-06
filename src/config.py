@@ -28,8 +28,3 @@ def has_tmdb_api_key():
 def has_omdb_api_key():
     """OMDb API key girilmiş mi kontrol eder."""
     return bool(OMDB_API_KEY)
-
-print("ENV PATH:", ENV_PATH)
-print("EXISTS:", ENV_PATH.exists())
-print("TMDB KEY:", TMDB_API_KEY)
-print("OMDB KEY:", OMDB_API_KEY)
